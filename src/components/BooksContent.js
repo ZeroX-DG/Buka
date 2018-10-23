@@ -1,23 +1,24 @@
-
-import { mapState } from 'vuex'
-import Book from './Book'
+import { mapState } from "vuex";
+import Book from "./Book";
 
 export default {
-	template: `<div class="books-content">
+  template: `<div class="books-content">
 								<ul>
 									<li v-for="book in booksContent">
 										<book :book-id="book.bookId" :book-name="book.bookName" :book-author="book.bookAuthor"
 												:book-path="book.bookPath" :book-image-path="book.bookImagePath"
-												:book-page-count="book.bookPageCount" :list-id="book.listId"></book>
+												:book-page-count="book.bookPageCount" :list-id="book.listId" :book-current-page="book.bookCurrentPage"></book>
 										</li>
 								</ul>
 							</div>`,
-	data() {
-	},
-	computed: mapState({
-		booksContent: state => state.booksContent.booksContent
-	}),
-	components: {
-		'book': Book
-	}
-}
+  data() {},
+  computed: mapState({
+    booksContent: state => {
+      //console.log(state.booksContent.booksContent);
+      return state.booksContent.booksContent;
+    }
+  }),
+  components: {
+    book: Book
+  }
+};

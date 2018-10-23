@@ -87,7 +87,8 @@ const actions = {
 							bookName: bookName,
 							bookAuthor: bookAuthor,
 							bookPageCount: bookPageCount,
-							listId: args.listId
+							listId: args.listId,
+							bookCurrentPage: 1
 						})
 
 						if ( books.length == selectedFiles.length ) resolve(books)
